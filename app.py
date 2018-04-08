@@ -22,12 +22,12 @@ def get_attr(name):
     return tables[field]
 
 @app.route('/<item>', methods=['GET', 'POST'])
-def sln(item):
+def attr_router(item):
     target_tables = find_attr(item)
     return render_template('data.html', target_tables=target_tables)
 
 @app.route('/', methods=['GET', 'POST'])
-def send():
+def index():
     if request.method == 'POST':
         target_tables = findtables(request.form['target'])
         return render_template('data.html', target_tables=target_tables)
