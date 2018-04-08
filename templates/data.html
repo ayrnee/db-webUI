@@ -17,9 +17,10 @@
     {{button}} <span class="caret"></span></button>
     <ul class="dropdown-menu" role="menu">
       {% for item in target_tables[button] %}
-        <li><a href="/"> {{item}} </a> </li>
+        <li><a href="/{{item}}"> {{item}} </a> </li>
       {% endfor %}
     </ul>
+
   </div>
   {% endfor %}
 

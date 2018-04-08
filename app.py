@@ -11,24 +11,27 @@ def findtables(substr):
             ans[table] = tables[table]
     return ans
 
-def find_attr(substr):
-    ans = []
+def find_attr(item):
+    ans = {}
     for table in tables:
-        if substr in tables[table]:
-            ans.append(table)
+        if item in tables[table]:
+            ans[table] = tables[table]
     return ans
 
 def get_attr(name):
     return tables[field]
 
-
+@app.route('/<item>', methods=['GET', 'POST'])
+def sln(item):
+    target_tables = find_attr(item)
+    return render_template('data.html', target_tables=target_tables)
 
 @app.route('/', methods=['GET', 'POST'])
 def send():
     if request.method == 'POST':
         target_tables = findtables(request.form['target'])
-        return render_template('age.html', target_tables=target_tables)
+        return render_template('data.html', target_tables=target_tables)
 
     return render_template('index.html')
 if __name__ == "__main__":
-    app.run()
+    app.run(use_reloader=True)
