@@ -2,9 +2,9 @@ from flask import Flask,render_template, request
 from flask_mysqldb import MySQL
 app = Flask(__name__)
 app.config['MYSQL_HOST'] = 'sql9.freemysqlhosting.net'
-app.config['MYSQL_USER'] = 'sql9231688'
-app.config['MYSQL_PASSWORD'] = 'H3CG2k3SjY'
-app.config['MYSQL_DB'] = 'sql9231688'
+app.config['MYSQL_USER'] = 'sql9233071'
+app.config['MYSQL_PASSWORD'] = '1uXgh92Fwi'
+app.config['MYSQL_DB'] = 'sql9233071'
 mysql = MySQL(app)
 
 tables = {}
